@@ -1,26 +1,36 @@
 {
-
-    "description": "Block annoying mailtracking",
-    "manifest_version": 2,
-    "name": "Block Mail Track",
-    "version": "1.0",
-  
-    "permissions": [
-      "webRequest",
-      "webRequestBlocking",
-      "https://*.googleusercontent.com/",
-      "https://mail.google.com/*"
-    ],
-   
-    "background": {
-      "scripts": ["background.js"]
-    },
- 
-  "browser_action": {
-    "default_icon": {
-      "16": "icons/icon16.png",
-      "32": "icons/icon32.png"
+  "manifest_version": 2,
+  "name": "Block Mailtrack",
+  "version": "1.1",
+  "description": "Block tracking pixel from mailtrack.io (for Gmail).",
+  "homepage_url": "https://github.com/gioxx/block-mailtrack",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "block-mailtrack@noads.it"
     }
-  }
-  
-  }
+  },
+  "icons": {
+    "128": "icons/icon128.png",
+    "64": "icons/icon64.png",
+    "48": "icons/icon48.png",
+    "32": "icons/icon32.png",
+    "16": "icons/icon16.png"
+  },
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "*://*.googleusercontent.com/",
+    "*://mail.google.com/*"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.googleusercontent.com/","*://mail.google.com/*"],
+      "css": ["mtsignature.css"]
+    }
+  ]
+}

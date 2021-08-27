@@ -1,0 +1,26 @@
+/*
+  MT Signature CSS - GSolone 2021
+  Thanks to:
+    https://www.w3schools.com/cssref/sel_attr_contain.asp
+    https://stackoverflow.com/a/62495927/2220346
+    https://www.flaticon.com/free-icon/no-stopping_1810742
+*/
+
+/*
+a[id$="signatureLink-logo"] {display: none;}
+a[id$="signatureLink-text"] {display: none;}
+div[id$="mt-signature"] span {display: none;}
+*/
+
+div[id$="mt-signature"] tbody {display: none;}
+
+div[id$="mt-signature"] table:after {
+  display: block;
+  height: 32px;
+  /*content: url("https://xfiles.noads.it/img/blockmailtrack/blockmailtrack.png") " Mailtrack pixel blocked";*/
+  background: url("https://xfiles.noads.it/img/blockmailtrack/blockmailtrack.png") no-repeat;
+  content: "Mailtrack pixel blocked";
+  padding-left: 30px;
+  color: #777;
+  font-variant: small-caps;
+}​
